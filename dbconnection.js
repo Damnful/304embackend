@@ -38,6 +38,18 @@ function getDetails(client, username, callback) {
     });
 }
 
+function addFilm(client, filmName, filmGenre, yearReleased, userRating, criticRating) {
+    client.query("INSERT INTO users{filmName, filmGenre, yearReleased, userRating, criticRating) value(?,?,?,?,?)",
+        [filmName, filmGenre, yearReleased, userRating, criticRating], function(err, result) {
+            if(err) {
+                callback(err.message);
+            } else {
+                callback("Successfully added");
+            }
+        });
+}
+
 exports.connect = connectServer;
 exports.insertDetails = insertDetails;
 exports.getDetails = getDetails;
+exports.addFilm = addFilm;
