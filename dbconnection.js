@@ -7,8 +7,8 @@ function connectServer() {
         password: '',
         database: 'filmdatabase'
     });
-    con.connect(function (error) {
-        if (!!error) {
+    con.connect(function (err) {
+        if (err) {
             console.log("Error");
         } else {
             console.log("Connected");
